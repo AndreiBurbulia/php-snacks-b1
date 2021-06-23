@@ -8,7 +8,7 @@ $ads = [
     [
         'image_path' => 'https://previews.123rf.com/images/hstrongart/hstrongart1612/hstrongart161200121/68060446-anuncios-de-cepillos-de-dientes-el%C3%A9ctricos-modo-diferente-de-este-producto-con-blanco-modelo-de-diente.jpg',
         'link' => 'https://www.facebook.com',
-        'is_active' => true,
+        'is_active' => false,
     ],
     [
         'image_path' => 'https://thumbs.dreamstime.com/z/back-to-school-sale-background-chalkboard-sale-percentages-marketing-poster-color-pencils-96751666.jpg',
@@ -18,7 +18,7 @@ $ads = [
     [
         'image_path' => 'https://foodsecurityfoodjustice.files.wordpress.com/2016/11/beyond-the-omlette-1.jpg',
         'link' => 'https://laravel.com',
-        'is_active' => true,
+        'is_active' => false,
     ],
     [
         'image_path' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRniLfGdFLxVOUoEwYC9WeRIrfZInB74_80IV8yMnANx3HTZYoQ',
@@ -37,7 +37,7 @@ foreach ($ads as $value) {
 }
 
 $randNumber = rand(0, (count($active_ads) - 1));
-
+$randFull = rand(0, (count($ads)-1));
 ?>
 
 <!DOCTYPE html>
@@ -58,5 +58,8 @@ $randNumber = rand(0, (count($active_ads) - 1));
 
     <p>Sfondo con indice: <?php echo $randNumber;?></p>
     <img src="<?php echo $active_ads[$randNumber]['image_path']; ?>" alt="">
+
+    <p>Alternativa: se banner non disponile mostrare foto non attiva</p>
+    <img src="<?php echo $ads[$randFull]['is_active'] ? $active_ads[$randNumber]['image_path'] : 'https://lh3.googleusercontent.com/proxy/CmYpSUWIi3aMEmYuJ2o3FTlBXlJa8QmXearlT8JB9r9qvNApTHch0t-P0bG1U7HYWcH7sDrZYQ7WzFYXCoM69JzVrCiri6UsUdp2ytVoCU7c1UZzQYQpFwRIu4OJyteoP2Ox5C0-EyOK' ?>" alt="">
 </body>
 </html>
