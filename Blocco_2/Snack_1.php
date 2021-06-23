@@ -52,9 +52,11 @@ $randNumber = rand(0, (count($active_ads) - 1));
 
     <h1>Snack 1</h1>
     <p>Snack 1
-Partendo da questo array: https://www.codepile.net/pile/Po60bjgQ
-Ad ogni refresh della pagina visualizzare una pubblicità a schermo, tenendo conto che possono essere sorteggiate solo quelle is_active true.</p>
-    <p><?php echo $randNumber;?></p>
+        Partendo da questo array: https://www.codepile.net/pile/Po60bjgQ
+        Ad ogni refresh della pagina visualizzare una pubblicità a schermo, tenendo conto che possono essere sorteggiate solo quelle is_active true.
+    </p>
+
+    <p>Sfondo con indice: <?php echo $randNumber;?></p>
     <img src="<?php echo $active_ads[$randNumber]['image_path']; ?>" alt="">
 </body>
 </html>
